@@ -1,0 +1,28 @@
+{
+  "name": "Isiolo City FC - The Bulls",
+  "short_name": "ICFC",
+  "description": "Official website of Isiolo City Football Club - The Bulls. Follow our journey in Kenyan football.",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#1a2332",
+  "background_color": "#1a2332",
+  "display": "standalone",
+  "start_url": "/",
+  "orientation": "portrait",
+  "scope": "/",
+  "lang": "en-KE",
+  "dir": "ltr",
+  "categories": ["sports", "football", "entertainment"]
+}

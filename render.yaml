@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: isiolo-city-frontend
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_GRAPHQL_URL
+        sync: false
+      - key: NEXT_PUBLIC_SITE_URL
+        sync: false

@@ -1,11 +1,13 @@
 export default function StructuredData() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://isiolocityfc.com";
+
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "SportsOrganization",
     "name": "Isiolo City Football Club",
     "alternateName": "The Bulls",
-    "url": process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
-    "logo": `${process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"}/logo.png`,
+    "url": siteUrl,
+    "logo": `${siteUrl}/logo.png`,
     "description": "Official website of Isiolo City Football Club - The Bulls. A Kenyan football club committed to excellence on and off the field.",
     "sport": "Football",
     "address": {
@@ -30,12 +32,12 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Isiolo City FC",
-    "url": process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
+    "url": siteUrl,
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": `${process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"}/news?q={search_term_string}`
+        "urlTemplate": `${siteUrl}/news?q={search_term_string}`
       },
       "query-input": "required name=search_term_string"
     }

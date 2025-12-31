@@ -18,8 +18,7 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implement actual form submission
-    console.log('Form submitted:', formData);
+    // TODO: Implement actual form submission to backend
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 5000);
   };

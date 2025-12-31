@@ -18,23 +18,23 @@ export default function TeamPage() {
   });
 
   // Fallback mock data if backend is not available
-  const mockPlayers = [
-    { id: '1', displayName: 'Kevin Otieno', position: 'GOALKEEPER', jerseyNumber: 1, dateOfBirth: '1995-01-01', nationality: 'Kenya', photos: [] },
-    { id: '2', displayName: 'Samuel Mwangi', position: 'GOALKEEPER', jerseyNumber: 22, dateOfBirth: '1999-01-01', nationality: 'Kenya', photos: [] },
-    { id: '3', displayName: 'David Wanjala', position: 'DEFENDER', jerseyNumber: 5, dateOfBirth: '1997-01-01', nationality: 'Kenya', photos: [] },
-    { id: '4', displayName: 'Joseph Kimani', position: 'DEFENDER', jerseyNumber: 4, dateOfBirth: '1998-01-01', nationality: 'Kenya', photos: [] },
-    { id: '5', displayName: 'Peter Omondi', position: 'DEFENDER', jerseyNumber: 3, dateOfBirth: '1996-01-01', nationality: 'Kenya', photos: [] },
-    { id: '6', displayName: 'Brian Njoroge', position: 'DEFENDER', jerseyNumber: 2, dateOfBirth: '2000-01-01', nationality: 'Kenya', photos: [] },
-    { id: '7', displayName: 'Michael Ochieng', position: 'MIDFIELDER', jerseyNumber: 8, dateOfBirth: '1999-01-01', nationality: 'Kenya', photos: [] },
-    { id: '8', displayName: 'Patrick Kamau', position: 'MIDFIELDER', jerseyNumber: 6, dateOfBirth: '1997-01-01', nationality: 'Kenya', photos: [] },
-    { id: '9', displayName: 'Dennis Mutua', position: 'MIDFIELDER', jerseyNumber: 7, dateOfBirth: '1998-01-01', nationality: 'Kenya', photos: [] },
-    { id: '10', displayName: 'Eric Wafula', position: 'MIDFIELDER', jerseyNumber: 11, dateOfBirth: '2001-01-01', nationality: 'Kenya', photos: [] },
-    { id: '11', displayName: 'James Kariuki', position: 'FORWARD', jerseyNumber: 10, dateOfBirth: '1996-01-01', nationality: 'Kenya', photos: [] },
-    { id: '12', displayName: 'Daniel Onyango', position: 'FORWARD', jerseyNumber: 9, dateOfBirth: '1998-01-01', nationality: 'Kenya', photos: [] },
-    { id: '13', displayName: 'John Ouma', position: 'FORWARD', jerseyNumber: 14, dateOfBirth: '2000-01-01', nationality: 'Kenya', photos: [] },
-  ];
+  // const mockPlayers = [
+  //   { id: '1', displayName: 'Kevin Otieno', position: 'GOALKEEPER', jerseyNumber: 1, dateOfBirth: '1995-01-01', nationality: 'Kenya', photos: [] },
+  //   { id: '2', displayName: 'Samuel Mwangi', position: 'GOALKEEPER', jerseyNumber: 22, dateOfBirth: '1999-01-01', nationality: 'Kenya', photos: [] },
+  //   { id: '3', displayName: 'David Wanjala', position: 'DEFENDER', jerseyNumber: 5, dateOfBirth: '1997-01-01', nationality: 'Kenya', photos: [] },
+  //   { id: '4', displayName: 'Joseph Kimani', position: 'DEFENDER', jerseyNumber: 4, dateOfBirth: '1998-01-01', nationality: 'Kenya', photos: [] },
+  //   { id: '5', displayName: 'Peter Omondi', position: 'DEFENDER', jerseyNumber: 3, dateOfBirth: '1996-01-01', nationality: 'Kenya', photos: [] },
+  //   { id: '6', displayName: 'Brian Njoroge', position: 'DEFENDER', jerseyNumber: 2, dateOfBirth: '2000-01-01', nationality: 'Kenya', photos: [] },
+  //   { id: '7', displayName: 'Michael Ochieng', position: 'MIDFIELDER', jerseyNumber: 8, dateOfBirth: '1999-01-01', nationality: 'Kenya', photos: [] },
+  //   { id: '8', displayName: 'Patrick Kamau', position: 'MIDFIELDER', jerseyNumber: 6, dateOfBirth: '1997-01-01', nationality: 'Kenya', photos: [] },
+  //   { id: '9', displayName: 'Dennis Mutua', position: 'MIDFIELDER', jerseyNumber: 7, dateOfBirth: '1998-01-01', nationality: 'Kenya', photos: [] },
+  //   { id: '10', displayName: 'Eric Wafula', position: 'MIDFIELDER', jerseyNumber: 11, dateOfBirth: '2001-01-01', nationality: 'Kenya', photos: [] },
+  //   { id: '11', displayName: 'James Kariuki', position: 'FORWARD', jerseyNumber: 10, dateOfBirth: '1996-01-01', nationality: 'Kenya', photos: [] },
+  //   { id: '12', displayName: 'Daniel Onyango', position: 'FORWARD', jerseyNumber: 9, dateOfBirth: '1998-01-01', nationality: 'Kenya', photos: [] },
+  //   { id: '13', displayName: 'John Ouma', position: 'FORWARD', jerseyNumber: 14, dateOfBirth: '2000-01-01', nationality: 'Kenya', photos: [] },
+  // ];
 
-  const allPlayers = (data as any)?.players || mockPlayers;
+  const allPlayers = (data as any)?.players;
   const filteredPlayers = selectedPosition === 'All'
     ? allPlayers
     : allPlayers.filter((p: any) => p.position === selectedPosition.toUpperCase());
@@ -203,9 +203,9 @@ export default function TeamPage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { name: 'Mohamed Hassan', role: 'Head Coach', image: '👨‍💼' },
-              { name: 'John Kibet', role: 'Assistant Coach', image: '👨‍💼' },
-              { name: 'Grace Wambui', role: 'Fitness Coach', image: '👩‍💼' },
+              { name: 'Abubakar Daud', role: 'Head Coach', image: '👨‍💼' },
+              { name: 'Muhsin Ibrahim', role: 'Assistant Coach', image: '👨‍💼' },
+              { name: 'Dr Mohammed', role: 'Fitness Coach', image: '👨‍💼' },
             ].map((staff, index) => (
               <div
                 key={index}

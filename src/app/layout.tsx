@@ -19,7 +19,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://isiolocityfc.com'),
   title: {
     default: "Isiolo City FC - The Bulls | Official Website",
     template: "%s | Isiolo City FC"
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_KE',
-    url: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://isiolocityfc.com',
     siteName: 'Isiolo City FC',
     title: 'Isiolo City FC - The Bulls | Official Website',
     description: 'Official website of Isiolo City Football Club - The Bulls. Follow our journey in Kenyan football.',
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: 'NoNbkxIJ3q3zSIxV2zSyJ5gEJ9olVvM3taWjgwM3Z5Q',
     // yandex: 'your-yandex-verification-code',
     // bing: 'your-bing-verification-code',
   },

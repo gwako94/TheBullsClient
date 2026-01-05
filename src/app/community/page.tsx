@@ -36,7 +36,7 @@ export default function CommunityPage() {
                 {[
                   { name: 'John M.', quote: 'Being a Bulls fan has been the best decision! The community is amazing.' },
                   { name: 'Sarah K.', quote: 'Match days at Isiolo Stadium are unforgettable experiences!' },
-                  { name: 'David O.', quote: 'Proud to support our local team. The Bulls represent us with pride!' },
+                  { name: 'David O.', quote: 'Proud to support our local team. Northern Bulls represent us with pride!' },
                 ].map((testimonial, index) => (
                   <div key={index} className="bg-white p-6 rounded-xl shadow">
                     <p className="text-gray-700 italic mb-2">"{testimonial.quote}"</p>

@@ -10,7 +10,7 @@ import { marked } from 'marked';
 const newsArticles = {
   '1': {
     id: 1,
-    title: 'The Bulls Charge to Victory: 4-1 Triumph Over Rivals',
+    title: 'Northern Bulls Charge to Victory: 4-1 Triumph Over Rivals',
     category: 'Match Report',
     date: 'December 12, 2024',
     author: 'Match Correspondent',
@@ -20,7 +20,7 @@ const newsArticles = {
       <p>In a spectacular display of footballing excellence, Isiolo City FC demolished their rivals 4-1 at Isiolo Stadium on Saturday evening, sending the home crowd into raptures and cementing their position at the top of the table.</p>
 
       <h2>First Half Domination</h2>
-      <p>The Bulls started the match with intent, pressing high and creating chances from the opening whistle. Captain James Mwangi opened the scoring in the 15th minute with a stunning long-range effort that left the opposition goalkeeper with no chance.</p>
+      <p>Northern Bulls started the match with intent, pressing high and creating chances from the opening whistle. Captain James Mwangi opened the scoring in the 15th minute with a stunning long-range effort that left the opposition goalkeeper with no chance.</p>
 
       <p>The home side doubled their advantage just ten minutes later when striker David Omondi latched onto a through ball and calmly slotted past the keeper. The stadium erupted as fans celebrated what was turning into a dominant performance.</p>
 
@@ -33,7 +33,7 @@ const newsArticles = {
       <p>"I'm incredibly proud of the team today," said head coach after the match. "We executed our game plan perfectly and showed the quality that has made us one of the most exciting teams in the league. The support from our fans was phenomenal - they really are our 12th man."</p>
 
       <h2>What's Next</h2>
-      <p>The Bulls will look to continue this momentum as they travel away next weekend. With performances like this, the championship dream is very much alive.</p>
+      <p>Northern Bulls will look to continue this momentum as they travel away next weekend. With performances like this, the championship dream is very much alive.</p>
 
       <p>All home matches are FREE to attend - join us at Isiolo Stadium and be part of the journey!</p>
     `,
@@ -89,17 +89,17 @@ const newsArticles = {
     date: 'December 8, 2024',
     author: 'Fan Engagement',
     readTime: '3 min read',
-    excerpt: 'With free entry and unbeaten home record, fans rally behind The Bulls for crucial weekend fixture at Isiolo Stadium',
+    excerpt: 'With free entry and unbeaten home record, fans rally behind Northern Bulls for crucial weekend fixture at Isiolo Stadium',
     content: `
-      <p>Excitement is building across Isiolo County as The Bulls prepare to host their biggest home match of the season this weekend. With our unbeaten home record on the line and FREE entry for all fans, stadium officials are expecting record attendance.</p>
+      <p>Excitement is building across Isiolo County as Northern Bulls prepare to host their biggest home match of the season this weekend. With our unbeaten home record on the line and FREE entry for all fans, stadium officials are expecting record attendance.</p>
 
       <h2>Fortress Isiolo</h2>
-      <p>Isiolo Stadium has become a fortress this season, with The Bulls yet to drop a single point at home. This impressive run has captured the imagination of football fans across the region, with many traveling from neighboring counties to witness the spectacle.</p>
+      <p>Isiolo Stadium has become a fortress this season, with Northern Bulls yet to drop a single point at home. This impressive run has captured the imagination of football fans across the region, with many traveling from neighboring counties to witness the spectacle.</p>
 
       <p>"The atmosphere at our home matches is electric," said our fan liaison officer. "The support from our community has been phenomenal, and we expect this weekend to be extra special."</p>
 
       <h2>Free Entry Policy</h2>
-      <p>Our commitment to making football accessible to everyone continues with FREE entry to all home matches. No tickets, no hassle - just show up and support The Bulls!</p>
+      <p>Our commitment to making football accessible to everyone continues with FREE entry to all home matches. No tickets, no hassle - just show up and support Northern Bulls!</p>
 
       <p>Gates open 2 hours before kickoff, and we encourage fans to arrive early to:</p>
       <ul>
@@ -129,7 +129,7 @@ const newsArticles = {
       <strong>Venue:</strong> Isiolo Stadium<br>
       <strong>Entry:</strong> FREE for all fans</p>
 
-      <p>Let's pack the stadium and roar The Bulls to another home victory! See you there!</p>
+      <p>Let's pack the stadium and roar Northern Bulls to another home victory! See you there!</p>
 
       <p>#TheBulls #IsiolocityFC #FreEntry #PackTheStadium</p>
     `,

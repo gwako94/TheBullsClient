@@ -15,7 +15,7 @@ export default function TicketsPage() {
             <div className="text-6xl mb-6">🎉</div>
             <h2 className="text-4xl font-bold text-navy-950 mb-4">Free Entry For All Fans!</h2>
             <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
-              We believe football is for everyone. All Isiolo City FC home matches are completely FREE to attend. Just show up and support The Bulls!
+              We believe football is for everyone. All Isiolo City FC home matches are completely FREE to attend. Just show up and support Northern Bulls!
             </p>
 
             <div className="bg-white rounded-xl p-8 shadow-lg mb-8 border border-gray-200">

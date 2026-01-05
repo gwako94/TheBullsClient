@@ -13,7 +13,7 @@ const LatestNews = () => {
   const mockArticles = [
     {
       id: '1',
-      title: 'The Bulls Charge to Victory: 4-1 Triumph Over Rivals',
+      title: 'Northern Bulls Charge to Victory: 4-1 Triumph Over Rivals',
       slug: 'bulls-charge-victory-4-1-triumph',
       excerpt: 'Isiolo City FC delivers a stunning performance at home, showcasing attacking prowess and solid defense in front of passionate fans',
       category: 'MATCH_REPORT',
@@ -37,7 +37,7 @@ const LatestNews = () => {
       id: '3',
       title: 'Record Crowd Expected for Next Home Match',
       slug: 'record-crowd-expected-home-match',
-      excerpt: 'With free entry and unbeaten home record, fans rally behind The Bulls for crucial weekend fixture at Isiolo Stadium',
+      excerpt: 'With free entry and unbeaten home record, fans rally behind Northern Bulls for crucial weekend fixture at Isiolo Stadium',
       category: 'NEWS',
       publishedAt: '2024-12-08T00:00:00Z',
       author: { id: '3', name: 'Fan Engagement' },

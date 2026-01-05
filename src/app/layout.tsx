@@ -21,13 +21,13 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://isiolocityfc.com'),
   title: {
-    default: "Isiolo City FC - The Bulls | Official Website",
+    default: "Isiolo City FC - Northern Bulls | Official Website",
     template: "%s | Isiolo City FC"
   },
-  description: "Official website of Isiolo City Football Club - The Bulls. Follow our journey in Kenyan football. Latest news, match fixtures, player profiles, tickets, and community programs.",
+  description: "Official website of Isiolo City Football Club - Northern Bulls. Follow our journey in Kenyan football. Latest news, match fixtures, player profiles, tickets, and community programs.",
   keywords: [
     "Isiolo City FC",
-    "The Bulls",
+    "Northern Bulls",
     "Kenya Football",
     "Kenyan Football Club",
     "Isiolo Football",
@@ -50,22 +50,22 @@ export const metadata: Metadata = {
     locale: 'en_KE',
     url: process.env.NEXT_PUBLIC_SITE_URL || 'https://isiolocityfc.com',
     siteName: 'Isiolo City FC',
-    title: 'Isiolo City FC - The Bulls | Official Website',
-    description: 'Official website of Isiolo City Football Club - The Bulls. Follow our journey in Kenyan football.',
+    title: 'Isiolo City FC - Northern Bulls | Official Website',
+    description: 'Official website of Isiolo City Football Club - Northern Bulls. Follow our journey in Kenyan football.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Isiolo City FC - The Bulls',
+        alt: 'Isiolo City FC - Northern Bulls',
       }
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Isiolo City FC - The Bulls',
-    description: 'Official website of Isiolo City Football Club - The Bulls. Follow our journey in Kenyan football.',
-    images: ['/og-image.jpg'],
+    title: 'Isiolo City FC - Northern Bulls',
+    description: 'Official website of Isiolo City Football Club - Northern Bulls. Follow our journey in Kenyan football.',
+    images: ['/og-image.png'],
     creator: '@isiolocityfc',
   },
   robots: {

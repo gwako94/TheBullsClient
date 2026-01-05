@@ -20,7 +20,7 @@ const CTASection = () => {
               Experience Live Football
             </h2>
             <p className="text-lg text-white/90 mb-6">
-              All home matches are FREE! Join thousands of fans at Isiolo Stadium and witness The Bulls in action.
+              All home matches are FREE! Join thousands of fans at Isiolo Stadium and witness Northern Bulls in action.
             </p>
             <Link
               href="/matches"
@@ -36,7 +36,7 @@ const CTASection = () => {
           {/* Right: Support */}
           <div className="text-center md:text-left">
             <div className="inline-block bg-gold-500/20 border-2 border-gold-400 text-gold-100 px-4 py-2 rounded-full text-sm font-bold mb-4">
-              ❤️ SUPPORT THE BULLS
+              ❤️ SUPPORT Northern Bulls
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white font-playfair mb-4">
               Power Our Dream

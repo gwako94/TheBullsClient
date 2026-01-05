@@ -51,7 +51,7 @@ const Navbar = () => {
                   Isiolo City FC
                 </div>
                 <div className="text-gold-600 text-xs font-semibold tracking-wider">
-                  THE BULLS
+                  Northern Bulls
                 </div>
               </div>
             </Link>
@@ -133,7 +133,7 @@ const Navbar = () => {
               </div>
               <div>
                 <div className="text-navy-950 font-bold text-sm">Isiolo City FC</div>
-                <div className="text-gold-600 text-xs font-semibold">THE BULLS</div>
+                <div className="text-gold-600 text-xs font-semibold">Northern Bulls</div>
               </div>
             </div>
             <button

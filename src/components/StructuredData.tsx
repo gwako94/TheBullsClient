@@ -5,10 +5,10 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "SportsOrganization",
     "name": "Isiolo City Football Club",
-    "alternateName": "The Bulls",
+    "alternateName": "Northern Bulls",
     "url": siteUrl,
     "logo": `${siteUrl}/logo.png`,
-    "description": "Official website of Isiolo City Football Club - The Bulls. A Kenyan football club committed to excellence on and off the field.",
+    "description": "Official website of Isiolo City Football Club - Northern Bulls. A Kenyan football club committed to excellence on and off the field.",
     "sport": "Football",
     "address": {
       "@type": "PostalAddress",

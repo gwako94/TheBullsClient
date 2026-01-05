@@ -75,7 +75,7 @@ const FeaturedPlayers = () => {
             Our Stars
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Meet the talented athletes who make the Bulls unstoppable
+            Meet the talented athletes who make Northern Bulls unstoppable
           </p>
           <div className="w-20 h-1 bg-gradient-to-r from-red-600 to-gold-500 mx-auto mt-4"></div>
         </div>

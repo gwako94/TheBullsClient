@@ -32,7 +32,7 @@ export default function DonatePage() {
     <main className="min-h-screen pt-16">
       <section className="bg-gradient-to-br from-navy-950 to-navy-900 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white font-playfair mb-4">Support The Bulls</h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-white font-playfair mb-4">Support Northern Bulls</h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">Your contribution helps us build a better future</p>
           <div className="w-20 h-1 bg-gradient-to-r from-red-600 to-gold-500 mx-auto mt-6"></div>
         </div>

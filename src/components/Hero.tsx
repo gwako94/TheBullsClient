@@ -9,7 +9,7 @@ const Hero = () => {
 
   const slides = [
     {
-      title: 'THE BULLS',
+      title: 'Northern Bulls',
       subtitle: "Isiolo's Pride",
       description: 'Experience the passion, power, and glory of Isiolo City FC',
       cta: 'Join The Drive',

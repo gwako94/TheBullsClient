@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useQuery } from '@apollo/client/react';
 import { GET_LATEST_NEWS } from '@/graphql/queries/news';
 
@@ -9,44 +10,7 @@ const LatestNews = () => {
     variables: { limit: 3 }
   });
 
-  // Fallback mock data if backend is not available
-  const mockArticles = [
-    {
-      id: '1',
-      title: 'Northern Bulls Charge to Victory: 4-1 Triumph Over Rivals',
-      slug: 'bulls-charge-victory-4-1-triumph',
-      excerpt: 'Isiolo City FC delivers a stunning performance at home, showcasing attacking prowess and solid defense in front of passionate fans',
-      category: 'MATCH_REPORT',
-      publishedAt: '2024-12-12T00:00:00Z',
-      author: { id: '1', name: 'Match Correspondent' },
-      featuredImage: null,
-      tags: [],
-    },
-    {
-      id: '2',
-      title: 'Community First: Free Football Clinic for Local Youth',
-      slug: 'community-free-football-clinic',
-      excerpt: 'Isiolo City FC partners with Java Events to bring professional coaching to 200 aspiring young footballers in our community',
-      category: 'NEWS',
-      publishedAt: '2024-12-10T00:00:00Z',
-      author: { id: '2', name: 'Foundation Team' },
-      featuredImage: null,
-      tags: [],
-    },
-    {
-      id: '3',
-      title: 'Record Crowd Expected for Next Home Match',
-      slug: 'record-crowd-expected-home-match',
-      excerpt: 'With free entry and unbeaten home record, fans rally behind Northern Bulls for crucial weekend fixture at Isiolo Stadium',
-      category: 'NEWS',
-      publishedAt: '2024-12-08T00:00:00Z',
-      author: { id: '3', name: 'Fan Engagement' },
-      featuredImage: null,
-      tags: [],
-    },
-  ];
-
-  const newsArticles = (data as any)?.latestNews || mockArticles;
+  const newsArticles = (data as any)?.latestNews || [];
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
@@ -61,15 +25,15 @@ const LatestNews = () => {
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex items-center justify-between mb-12">
+        <div className="flex items-center justify-between mb-14">
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold text-navy-950 font-playfair mb-2">
-              Latest News
+            <p className="text-sm font-semibold text-red-600 tracking-widest uppercase mb-3">Latest Updates</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-950 font-playfair">
+              Club News
             </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-red-600 to-gold-500"></div>
           </div>
           <Link
             href="/news"
@@ -112,8 +76,15 @@ const LatestNews = () => {
           </div>
         )}
 
+        {/* Empty State */}
+        {!loading && !error && newsArticles.length === 0 && (
+          <div className="text-center py-10">
+            <p className="text-gray-500">No articles published yet.</p>
+          </div>
+        )}
+
         {/* News Grid */}
-        {!loading && (
+        {!loading && newsArticles.length > 0 && (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {newsArticles.map((article: any, index: number) => (
               <Link
@@ -131,13 +102,19 @@ const LatestNews = () => {
                   </div>
                   {/* Featured Image or Placeholder */}
                   {article.featuredImageUrl ? (
-                    <img
+                    <Image
                       src={article.featuredImageUrl}
                       alt={article.title}
-                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover transform group-hover:scale-110 transition-transform duration-500"
                     />
                   ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-navy-200 to-navy-300 transform group-hover:scale-110 transition-transform duration-500"></div>
+                    <div className="w-full h-full bg-gradient-to-br from-navy-800 to-navy-900 transform group-hover:scale-110 transition-transform duration-500 flex items-center justify-center">
+                      <svg className="w-16 h-16 text-navy-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                      </svg>
+                    </div>
                   )}
                 </div>
 

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useQuery } from '@apollo/client/react';
 import { GET_PLAYERS } from '@/graphql/queries/players';
 
@@ -17,24 +18,7 @@ export default function TeamPage() {
     }
   });
 
-  // Fallback mock data if backend is not available
-  // const mockPlayers = [
-  //   { id: '1', displayName: 'Kevin Otieno', position: 'GOALKEEPER', jerseyNumber: 1, dateOfBirth: '1995-01-01', nationality: 'Kenya', photos: [] },
-  //   { id: '2', displayName: 'Samuel Mwangi', position: 'GOALKEEPER', jerseyNumber: 22, dateOfBirth: '1999-01-01', nationality: 'Kenya', photos: [] },
-  //   { id: '3', displayName: 'David Wanjala', position: 'DEFENDER', jerseyNumber: 5, dateOfBirth: '1997-01-01', nationality: 'Kenya', photos: [] },
-  //   { id: '4', displayName: 'Joseph Kimani', position: 'DEFENDER', jerseyNumber: 4, dateOfBirth: '1998-01-01', nationality: 'Kenya', photos: [] },
-  //   { id: '5', displayName: 'Peter Omondi', position: 'DEFENDER', jerseyNumber: 3, dateOfBirth: '1996-01-01', nationality: 'Kenya', photos: [] },
-  //   { id: '6', displayName: 'Brian Njoroge', position: 'DEFENDER', jerseyNumber: 2, dateOfBirth: '2000-01-01', nationality: 'Kenya', photos: [] },
-  //   { id: '7', displayName: 'Michael Ochieng', position: 'MIDFIELDER', jerseyNumber: 8, dateOfBirth: '1999-01-01', nationality: 'Kenya', photos: [] },
-  //   { id: '8', displayName: 'Patrick Kamau', position: 'MIDFIELDER', jerseyNumber: 6, dateOfBirth: '1997-01-01', nationality: 'Kenya', photos: [] },
-  //   { id: '9', displayName: 'Dennis Mutua', position: 'MIDFIELDER', jerseyNumber: 7, dateOfBirth: '1998-01-01', nationality: 'Kenya', photos: [] },
-  //   { id: '10', displayName: 'Eric Wafula', position: 'MIDFIELDER', jerseyNumber: 11, dateOfBirth: '2001-01-01', nationality: 'Kenya', photos: [] },
-  //   { id: '11', displayName: 'James Kariuki', position: 'FORWARD', jerseyNumber: 10, dateOfBirth: '1996-01-01', nationality: 'Kenya', photos: [] },
-  //   { id: '12', displayName: 'Daniel Onyango', position: 'FORWARD', jerseyNumber: 9, dateOfBirth: '1998-01-01', nationality: 'Kenya', photos: [] },
-  //   { id: '13', displayName: 'John Ouma', position: 'FORWARD', jerseyNumber: 14, dateOfBirth: '2000-01-01', nationality: 'Kenya', photos: [] },
-  // ];
-
-  const allPlayers = (data as any)?.players;
+  const allPlayers = (data as any)?.players ?? [];
   const filteredPlayers = selectedPosition === 'All'
     ? allPlayers
     : allPlayers.filter((p: any) => p.position === selectedPosition.toUpperCase());
@@ -65,7 +49,7 @@ export default function TeamPage() {
   };
 
   return (
-    <main className="min-h-screen pt-20">
+    <main className="min-h-screen pt-16">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-navy-950 to-navy-900 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -135,10 +119,12 @@ export default function TeamPage() {
                   {/* Player Image */}
                   <div className="aspect-[3/4] bg-gradient-to-br from-navy-700 to-navy-800 relative">
                     {player.photoUrls && player.photoUrls.length > 0 && player.photoUrls[0] ? (
-                      <img
+                      <Image
                         src={player.photoUrls[0]}
                         alt={player.displayName}
-                        className="w-full h-full object-cover"
+                        fill
+                        sizes="(max-width: 768px) 50vw, 25vw"
+                        className="object-cover object-top"
                       />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center text-8xl">

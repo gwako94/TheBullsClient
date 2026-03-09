@@ -8,27 +8,19 @@ export const GET_UPCOMING_MATCHES = gql`
         id
         name
         shortName
-        logo
+        badgeUrl
       }
       awayTeam {
         id
         name
         shortName
-        logo
+        badgeUrl
       }
-      venue {
-        id
-        name
-        city
-        country
-        capacity
-      }
+      venue
       kickoffTime
       competition
       season
       status
-      homeScore
-      awayScore
     }
   }
 `;
@@ -41,26 +33,21 @@ export const GET_MATCHES = gql`
         id
         name
         shortName
-        logo
+        badgeUrl
       }
       awayTeam {
         id
         name
         shortName
-        logo
+        badgeUrl
       }
-      venue {
-        id
-        name
-        city
-      }
+      venue
       kickoffTime
       competition
       season
       status
       homeScore
       awayScore
-      attendance
     }
   }
 `;
@@ -73,33 +60,22 @@ export const GET_MATCH = gql`
         id
         name
         shortName
-        logo
-        stadium
+        badgeUrl
       }
       awayTeam {
         id
         name
         shortName
-        logo
-        stadium
+        badgeUrl
       }
-      venue {
-        id
-        name
-        city
-        country
-        capacity
-        address
-      }
+      venue
       kickoffTime
       competition
       season
       status
       homeScore
       awayScore
-      attendance
       matchReport
-      highlightUrls
       createdAt
     }
   }

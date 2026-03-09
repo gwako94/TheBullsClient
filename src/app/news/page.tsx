@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useQuery } from '@apollo/client/react';
 import { GET_ARTICLES } from '@/graphql/queries/news';
 
@@ -9,77 +10,7 @@ export default function NewsPage() {
     variables: { limit: 20 }
   });
 
-  // Fallback mock data if backend is not available
-  const mockArticles = [
-    {
-      id: '1',
-      title: 'Bulls Dominate in Season Opener',
-      slug: 'bulls-dominate-season-opener',
-      excerpt: 'Isiolo City FC kicks off the season with commanding 3-0 victory',
-      category: 'MATCH_REPORT',
-      publishedAt: '2024-12-10T00:00:00Z',
-      author: { id: '1', name: 'Sports Desk' },
-      featuredImage: null,
-      tags: []
-    },
-    {
-      id: '2',
-      title: 'New Signings Announced',
-      slug: 'new-signings-announced',
-      excerpt: 'Club welcomes three talented players to strengthen the squad',
-      category: 'TRANSFER_NEWS',
-      publishedAt: '2024-12-08T00:00:00Z',
-      author: { id: '2', name: 'Transfer Team' },
-      featuredImage: null,
-      tags: []
-    },
-    {
-      id: '3',
-      title: 'Youth Academy Graduates Shine',
-      slug: 'youth-academy-graduates-shine',
-      excerpt: 'Academy players make successful transition to first team',
-      category: 'NEWS',
-      publishedAt: '2024-12-05T00:00:00Z',
-      author: { id: '3', name: 'Academy Staff' },
-      featuredImage: null,
-      tags: []
-    },
-    {
-      id: '4',
-      title: 'Stadium Expansion Plans Revealed',
-      slug: 'stadium-expansion-plans',
-      excerpt: 'Isiolo Stadium to undergo major upgrade to increase capacity',
-      category: 'NEWS',
-      publishedAt: '2024-12-03T00:00:00Z',
-      author: { id: '4', name: 'Admin' },
-      featuredImage: null,
-      tags: []
-    },
-    {
-      id: '5',
-      title: 'Community Outreach Success',
-      slug: 'community-outreach-success',
-      excerpt: 'Bulls give back to local community with charity event',
-      category: 'NEWS',
-      publishedAt: '2024-12-01T00:00:00Z',
-      author: { id: '5', name: 'Foundation' },
-      featuredImage: null,
-      tags: []
-    },
-    {
-      id: '6',
-      title: 'Player of the Month: James Kariuki',
-      slug: 'player-of-month-james-kariuki',
-      excerpt: 'Striker earns recognition for outstanding November performance',
-      category: 'NEWS',
-      publishedAt: '2024-11-30T00:00:00Z',
-      author: { id: '6', name: 'Media Team' },
-      featuredImage: null,
-      tags: []
-    },
-  ];
-
-  const newsArticles = (data as any)?.articles || mockArticles;
+  const newsArticles = (data as any)?.articles || [];
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
@@ -93,7 +24,7 @@ export default function NewsPage() {
     return category.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
   };
   return (
-    <main className="min-h-screen pt-20">
+    <main className="min-h-screen pt-16">
       <section className="bg-gradient-to-br from-navy-950 to-navy-900 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white font-playfair mb-4">Latest News</h1>
@@ -143,10 +74,12 @@ export default function NewsPage() {
                       </span>
                     </div>
                     {article.featuredImageUrl ? (
-                      <img
+                      <Image
                         src={article.featuredImageUrl}
                         alt={article.title}
-                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover transform group-hover:scale-110 transition-transform duration-500"
                       />
                     ) : (
                       <div className="w-full h-full bg-gradient-to-br from-navy-200 to-navy-300 transform group-hover:scale-110 transition-transform duration-500"></div>

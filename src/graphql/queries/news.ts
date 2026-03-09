@@ -47,7 +47,7 @@ export const GET_ARTICLE = gql`
 
 export const GET_ARTICLES = gql`
   query GetArticles($category: ContentCategory, $limit: Int, $offset: Int) {
-    articles(category: $category, limit: $limit, offset: $offset) {
+    articles(category: $category, status: PUBLISHED, limit: $limit, offset: $offset) {
       id
       title
       slug

@@ -16,6 +16,7 @@ const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
   display: "swap",
+  weight: ["700"],
 });
 
 export const metadata: Metadata = {
@@ -93,17 +94,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <head>
-        <StructuredData />
-      </head>
       <body
         className={`${inter.variable} ${playfair.variable} antialiased font-sans`}
+        suppressHydrationWarning
       >
         <ApolloProvider>
           <Navbar />
           {children}
           <Footer />
         </ApolloProvider>
+        <StructuredData />
       </body>
     </html>
   );

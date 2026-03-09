@@ -2,62 +2,9 @@
 
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useQuery } from '@apollo/client/react';
 import { GET_PLAYER } from '@/graphql/queries/players';
-
-// Mock player data - fallback if API fails
-const players = {
-  '1': {
-    id: 1,
-    name: 'James Mwangi',
-    number: 10,
-    position: 'Midfielder',
-    nationality: 'Kenyan',
-    age: 24,
-    height: '1.78m',
-    weight: '72kg',
-    joined: 'January 2025',
-    contract: 'June 2027',
-    bio: 'Dynamic midfielder with exceptional vision and passing ability. Known for his work rate and ability to control the tempo of the game. A product of our youth academy who has become a key player in the first team.',
-    stats: {
-      appearances: 45,
-      goals: 12,
-      assists: 18,
-      yellowCards: 3,
-      redCards: 0,
-    },
-    achievements: [
-      'Player of the Month - November 2024',
-      'Top Assist Provider 2024',
-      'Youth Academy Graduate of the Year 2023',
-    ],
-  },
-  '2': {
-    id: 2,
-    name: 'David Omondi',
-    number: 9,
-    position: 'Forward',
-    nationality: 'Kenyan',
-    age: 26,
-    height: '1.82m',
-    weight: '75kg',
-    joined: 'March 2024',
-    contract: 'December 2026',
-    bio: 'Clinical striker with a natural instinct for goal. His pace and positioning make him a constant threat to opposition defenses. Top scorer for two consecutive seasons.',
-    stats: {
-      appearances: 52,
-      goals: 38,
-      assists: 9,
-      yellowCards: 5,
-      redCards: 0,
-    },
-    achievements: [
-      'Top Scorer 2024',
-      'Hat-trick vs. Rivals - September 2024',
-      'Goal of the Season 2024',
-    ],
-  },
-};
 
 export default function PlayerProfilePage() {
   const params = useParams();
@@ -68,8 +15,7 @@ export default function PlayerProfilePage() {
     variables: { id: playerId },
   });
 
-  // Use GraphQL data or fallback to mock data
-  const player = (data as any)?.player || players[playerId as keyof typeof players];
+  const player = (data as any)?.player;
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
@@ -130,12 +76,15 @@ export default function PlayerProfilePage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Player Image */}
             <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-navy-800 to-navy-900 rounded-3xl overflow-hidden border-4 border-gold-500/30 shadow-2xl">
+              <div className="aspect-[3/4] bg-gradient-to-br from-navy-800 to-navy-900 rounded-3xl overflow-hidden border-4 border-gold-500/30 shadow-2xl">
                 {player.photoUrls && player.photoUrls.length > 0 ? (
-                  <img
+                  <Image
                     src={player.photoUrls[0]}
-                    alt={player.displayName || player.name}
-                    className="w-full h-full object-cover"
+                    alt={player.displayName}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover object-top"
+                    priority
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center text-9xl">
@@ -144,7 +93,7 @@ export default function PlayerProfilePage() {
                 )}
               </div>
               <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-red-600 rounded-3xl flex items-center justify-center shadow-xl">
-                <span className="text-6xl font-bold text-white">{player.jerseyNumber || player.number}</span>
+                <span className="text-6xl font-bold text-white">{player.jerseyNumber}</span>
               </div>
             </div>
 
@@ -153,7 +102,7 @@ export default function PlayerProfilePage() {
               <div className="inline-block bg-gold-500/20 border border-gold-400 text-gold-400 px-4 py-1.5 rounded-full text-sm font-semibold mb-4">
                 {player.position}
               </div>
-              <h1 className="text-5xl md:text-6xl font-bold mb-4 font-playfair">{player.displayName || player.name}</h1>
+              <h1 className="text-5xl md:text-6xl font-bold mb-4 font-playfair">{player.displayName}</h1>
               <p className="text-xl text-gray-300 mb-8">{player.bio}</p>
 
               <div className="grid grid-cols-2 gap-4">
@@ -224,18 +173,24 @@ export default function PlayerProfilePage() {
               <h2 className="text-3xl font-bold text-navy-950 mb-6 font-playfair">Contract Information</h2>
               <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
                 <div className="space-y-4">
-                  <div className="flex justify-between items-center pb-4 border-b">
-                    <span className="text-gray-600">Joined Club</span>
-                    <span className="font-semibold text-navy-950">{player.joined}</span>
-                  </div>
-                  <div className="flex justify-between items-center pb-4 border-b">
-                    <span className="text-gray-600">Contract Until</span>
-                    <span className="font-semibold text-navy-950">{player.contract}</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600">Squad Number</span>
-                    <span className="text-2xl font-bold text-red-600">#{player.number}</span>
-                  </div>
+                  {player.joinedDate && (
+                    <div className="flex justify-between items-center pb-4 border-b">
+                      <span className="text-gray-600">Joined Club</span>
+                      <span className="font-semibold text-navy-950">{formatDate(player.joinedDate)}</span>
+                    </div>
+                  )}
+                  {player.contractEndDate && (
+                    <div className="flex justify-between items-center pb-4 border-b">
+                      <span className="text-gray-600">Contract Until</span>
+                      <span className="font-semibold text-navy-950">{formatDate(player.contractEndDate)}</span>
+                    </div>
+                  )}
+                  {player.jerseyNumber && (
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Squad Number</span>
+                      <span className="text-2xl font-bold text-red-600">{player.jerseyNumber}</span>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -271,7 +226,7 @@ export default function PlayerProfilePage() {
             Support Northern Bulls
           </h2>
           <p className="text-xl text-gray-300 mb-8">
-            Come watch {player.displayName || player.name} and the rest of the team in action. All matches are FREE!
+            Come watch {player.displayName} and the rest of the team in action. All matches are FREE!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

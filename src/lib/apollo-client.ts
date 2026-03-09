@@ -29,7 +29,7 @@ export function makeClient() {
     cache: new InMemoryCache(),
     defaultOptions: {
       watchQuery: {
-        fetchPolicy: 'cache-and-network',
+        fetchPolicy: 'cache-first',
       },
     },
   });

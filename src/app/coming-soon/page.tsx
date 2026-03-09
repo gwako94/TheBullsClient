@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function ComingSoonPage() {
   return (
-    <main className="min-h-screen pt-20">
+    <main className="min-h-screen pt-16">
       <section className="bg-gradient-to-br from-navy-950 to-navy-900 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white font-playfair mb-4">Coming Soon</h1>

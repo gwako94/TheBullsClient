@@ -1,4 +1,11 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Coming Soon',
+  description: 'Exciting new features are on the way for Isiolo City FC. Stay connected and be the first to know when we launch.',
+  robots: { index: false, follow: true },
+};
 
 export default function ComingSoonPage() {
   return (

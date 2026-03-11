@@ -1,3 +1,14 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Community',
+  description: 'Join the Isiolo City FC community. Connect with passionate Northern Bulls fans, share your love for the team, and be part of our growing family.',
+  openGraph: {
+    title: 'Community | Isiolo City FC',
+    description: 'More than a club - we\'re a family. Join the Northern Bulls community.',
+  },
+};
+
 export default function CommunityPage() {
   return (
     <main className="min-h-screen pt-16">

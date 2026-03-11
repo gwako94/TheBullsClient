@@ -1,3 +1,14 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Official Shop',
+  description: 'Shop official Isiolo City FC merchandise. Jerseys, training kits, scarves, caps, and more. Show your pride with Northern Bulls gear.',
+  openGraph: {
+    title: 'Official Shop | Isiolo City FC',
+    description: 'Shop official Isiolo City FC merchandise. Jerseys, training kits, and Northern Bulls gear.',
+  },
+};
+
 export default function ShopPage() {
   const products = [
     { id: 1, name: 'Home Jersey 2024/25', price: 'KES 4,500', category: 'Jerseys', stock: 'In Stock' },

@@ -1,3 +1,14 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Match Highlights',
+  description: 'Watch the best moments from Isiolo City FC matches. Video highlights, goals, and key plays from Northern Bulls games.',
+  openGraph: {
+    title: 'Match Highlights | Isiolo City FC',
+    description: 'Relive the best moments from Isiolo City FC matches. Video highlights and goals.',
+  },
+};
+
 export default function HighlightsPage() {
   const videos = Array.from({ length: 6 }, (_, i) => ({
     id: i + 1,

@@ -1,4 +1,14 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Membership',
+  description: 'Join The Drive! Isiolo City FC membership tiers from Bronze to Platinum. Enjoy exclusive benefits, VIP access, shop discounts, and more.',
+  openGraph: {
+    title: 'Membership | Isiolo City FC',
+    description: 'Join The Drive! Isiolo City FC membership with exclusive benefits, VIP access, and more.',
+  },
+};
 
 export default function MembershipPage() {
   const tiers = [

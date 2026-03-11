@@ -1,3 +1,14 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Match Day Entry & Tickets',
+  description: 'All Isiolo City FC home matches are FREE to attend! Get match day information, VIP packages, and stadium details for Northern Bulls games.',
+  openGraph: {
+    title: 'Match Day Entry & Tickets | Isiolo City FC',
+    description: 'All Isiolo City FC home matches are FREE to attend! Get match day information and VIP packages.',
+  },
+};
+
 export default function TicketsPage() {
   return (
     <main className="min-h-screen pt-16">

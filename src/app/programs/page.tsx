@@ -1,3 +1,14 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Foundation Programs',
+  description: 'Isiolo City FC foundation programs empowering communities through football. Youth development, education support, health initiatives, and community outreach.',
+  openGraph: {
+    title: 'Foundation Programs | Isiolo City FC',
+    description: 'Empowering communities through football. Youth development, education, and outreach programs.',
+  },
+};
+
 export default function ProgramsPage() {
   return (
     <main className="min-h-screen pt-16">

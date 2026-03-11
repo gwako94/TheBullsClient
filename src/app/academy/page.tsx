@@ -1,3 +1,14 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Youth Academy',
+  description: 'Join the Isiolo City FC Youth Academy. Development programs for young players aged 10-17, training camps, and coaching courses in Isiolo, Kenya.',
+  openGraph: {
+    title: 'Youth Academy | Isiolo City FC',
+    description: 'Join the Isiolo City FC Youth Academy. Building the next generation of football excellence.',
+  },
+};
+
 export default function AcademyPage() {
   const programs = [
     { title: 'Youth Academy U-13', description: 'Development program for players aged 10-13', slots: 'Limited slots available' },

@@ -1,5 +1,15 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Our Partners & Sponsors',
+  description: 'Meet the partners and sponsors supporting Isiolo City FC. Learn about sponsorship opportunities and partnership packages with Northern Bulls.',
+  openGraph: {
+    title: 'Our Partners & Sponsors | Isiolo City FC',
+    description: 'Meet the partners and sponsors supporting Isiolo City FC. Explore sponsorship opportunities.',
+  },
+};
 
 export default function SponsorsPage() {
   return (

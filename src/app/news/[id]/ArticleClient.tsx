@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { useQuery } from '@apollo/client/react';
 import { GET_ARTICLE } from '@/graphql/queries/news';
 import { marked } from 'marked';
+import DOMPurify from 'isomorphic-dompurify';
 
 
 export default function ArticleClient() {
@@ -71,7 +72,8 @@ export default function ArticleClient() {
 
   const getContentHTML = () => {
     if (!article.content) return '';
-    return marked.parse(article.content) as string;
+    const raw = marked.parse(article.content) as string;
+    return DOMPurify.sanitize(raw);
   };
 
   const getShareUrl = () => typeof window !== 'undefined' ? window.location.href : '';
